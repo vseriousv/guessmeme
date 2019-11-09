@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Comfortaa";
+  src: url("./static/Comfortaa-VariableFont_wght.ttf");
+}
+
+
+body {
+  margin: 0;
+  font-family: Comfortaa;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  font-size: 16px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
