@@ -6,10 +6,6 @@ import './DrawBlock.css';
 
 class DrawBox extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     state = {
         userName: localStorage.getItem("userName")
     };
@@ -36,22 +32,24 @@ class DrawBox extends Component {
         if(isDrawer){
             canv.addEventListener('mousedown', function(e){
                 isClick = true;
+                pushToCoords({isClick: isClick})
             });
 
             canv.addEventListener('mouseup', function(e){
                 isClick = false;
                 ctx.beginPath();
                 coords.push('mousup');
+                pushToCoords({isClick: isClick})
             });
         }
 
         ctx.lineWidth = 2 * 2;
         canv.addEventListener('mousemove', function(e){
             
-            // if( isClick ){            
-            //     pushToCoords({Xcoords: e.offsetX, Ycoords: e.offsetY})
-            //     draw(e)
-            // }
+            if( isClick ){            
+                pushToCoords({Xcoords: e.offsetX, Ycoords: e.offsetY})
+                draw(e)
+            }
             
         });
 
@@ -89,19 +87,22 @@ class DrawBox extends Component {
 
         function clear(){
             ctx.clearRect(0, 0, canv.width, canv.height);
+            ctx.lineTo(0, 0);
+            ctx.beginPath();
         }
 
         document.addEventListener('keydown', function(e){
             // console.log(e.keyCode);
-            if(e.keyCode == 67){ // press key 'C'
+            if(e.keyCode === 67){ // press key 'C'
                 clear();
+                pushToCoords({isClear: true});
                 console.log('Clear');
             }
-            if(e.keyCode == 83){ // press key 'S'
+            if(e.keyCode === 83){ // press key 'S'
                 save();
                 console.log('Saved');
             }
-            if(e.keyCode == 82){ // press key 'R'
+            if(e.keyCode === 82){ // press key 'R'
                 console.log('Replay ....');
                 coords = JSON.parse(localStorage.getItem('coords'));
                 clear();
@@ -120,7 +121,6 @@ class DrawBox extends Component {
     render(){
         return (
             <Box className="imageInsert" style={this.style}>
-                This is the timer value: {this.state.coordsX} 
                 <canvas id="canvas" style={{display: "block"}}>Your browser is not maintain canvas</canvas>
             </Box>
         );

@@ -1,8 +1,6 @@
 import React,{Component} from 'react';
-import Box from '@material-ui/core/Box';
-
-// import DrawBox from './DrawBox';
-// import ImageBox from './ImageBox';
+import DrawBox from './DrawBox';
+import ImageBox from './ImageBox';
 
 import './DrawBlock.css'; 
 
@@ -12,14 +10,11 @@ class DrawBlock extends Component {
     };
 
     render(){
-        if(true){
-            return <Box></Box>
+        if(this.state.userName === 'admin'){
+            return <DrawBox />;
+        }else{
+            return <ImageBox />;           
         }
-        // if(this.state.userName == 'admin'){
-        //     return <DrawBox />;
-        // }else{
-        //     return <ImageBox />;           
-        // }
     }
 }
 
