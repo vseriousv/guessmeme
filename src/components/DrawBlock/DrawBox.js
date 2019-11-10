@@ -48,10 +48,10 @@ class DrawBox extends Component {
         ctx.lineWidth = 2 * 2;
         canv.addEventListener('mousemove', function(e){
             
-            if( isClick ){            
-                pushToCoords({Xcoords: e.offsetX, Ycoords: e.offsetY})
-                draw(e)
-            }
+            // if( isClick ){            
+            //     pushToCoords({Xcoords: e.offsetX, Ycoords: e.offsetY})
+            //     draw(e)
+            // }
             
         });
 
