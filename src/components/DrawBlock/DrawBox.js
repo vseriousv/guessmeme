@@ -38,13 +38,19 @@ class DrawBox extends Component {
             canv.addEventListener('mouseup', function(e){
                 isClick = false;
                 ctx.beginPath();
-                coords.push('mousup');
                 pushToCoords({isClick: isClick})
             });
         }
 
         ctx.lineWidth = 2 * 2;
         canv.addEventListener('mousemove', function(e){
+
+            if(e.offsetX >= 449 || e.offsetY >= 449){
+                isClick = false;
+                ctx.beginPath();
+                coords.push('mousup');
+                pushToCoords({isClick: isClick})
+            }
             
             if( isClick ){            
                 pushToCoords({Xcoords: e.offsetX, Ycoords: e.offsetY})
@@ -65,26 +71,6 @@ class DrawBox extends Component {
             ctx.moveTo(e.offsetX, e.offsetY);
         }   
         
-        function save(){
-            localStorage.setItem('coords', JSON.stringify(coords))
-        }
-
-        function replay(){
-            var timer = setInterval(function(){
-                if(!coords.length){
-                    clearInterval(timer);
-                    ctx.beginPath();
-                    return; 
-                }
-                var crd = coords.shift()
-                var e = {
-                    offsetX: crd["0"],
-                    offsetY: crd["1"]
-                }
-                draw(e);
-            }, 20);
-        }
-
         function clear(){
             ctx.clearRect(0, 0, canv.width, canv.height);
             ctx.lineTo(0, 0);
@@ -93,20 +79,10 @@ class DrawBox extends Component {
 
         document.addEventListener('keydown', function(e){
             // console.log(e.keyCode);
-            if(e.keyCode === 67){ // press key 'C'
+            if(e.keyCode == 67 && e.ctrlKey){ // press key 'C'
                 clear();
                 pushToCoords({isClear: true});
                 console.log('Clear');
-            }
-            if(e.keyCode === 83){ // press key 'S'
-                save();
-                console.log('Saved');
-            }
-            if(e.keyCode === 82){ // press key 'R'
-                console.log('Replay ....');
-                coords = JSON.parse(localStorage.getItem('coords'));
-                clear();
-                replay(); 
             }
         });
 

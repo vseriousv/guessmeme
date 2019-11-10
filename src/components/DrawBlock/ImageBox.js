@@ -1,13 +1,13 @@
 import React,{Component} from 'react';
 import Box from '@material-ui/core/Box';
-import { subscribeToCoords } from '../SocketIO/SocketIO';
+import { subscribeToStateData } from '../SocketIO/SocketIO';
 
 import './DrawBlock.css'; 
 
 class ImageBox extends Component {
     constructor(props) {
         super(props);
-        subscribeToCoords((err, data) => this.setState({
+        subscribeToStateData((err, data) => this.setState({
             coordsX: data.Xcoords,
             coordsY: data.Ycoords,
             isClick: data.isClick,
@@ -30,9 +30,6 @@ class ImageBox extends Component {
         canv.style.height='100%';
         canv.width  = canv.offsetWidth;
         canv.height = canv.offsetHeight;
-
-        // code;
-
     }
 
     componentWillUpdate(newProps, newState){
