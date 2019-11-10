@@ -5,8 +5,10 @@
   background-color: rgb(32, 160, 240);
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   padding: 0 50px;
-  margin-bottom: 50px;
-
+  margin-bottom: 30px;
+}
+.boxHeader a {
+    text-decoration: none;
 }
 .boxHeader .textShadow {
     display: inline-block;

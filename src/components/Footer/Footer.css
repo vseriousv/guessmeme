@@ -1,0 +1,12 @@
+.boxFooter{
+    height: 35px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+    padding: 0 50px;
+    margin-top: 30px;
+  }
+  p {
+      font-size: 0.875rem;
+      color: rgb(114, 114, 114);
+  }

@@ -15,17 +15,15 @@ class ChatBlock extends Component {
                     <Box></Box>
                 </Box>
                 <Divider style={{width: "100%", marginBottom: "5px"}}/>
-                <Input
+                <textarea
                     placeholder="Your text"
                     className="chatInput"
                     inputProps={{
                     'aria-label': 'description',
-                    }}
-                />
+                    }}>
+                </textarea>
             </Paper>
           );
     }
 }
-
-
 export default ChatBlock;
