@@ -1,0 +1,15 @@
+.ChatBlock{
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+}
+.chatInput{
+    width: 100%;
+}
+.BoxExportText{
+    width: 100%;
+    height: 100%;
+}
