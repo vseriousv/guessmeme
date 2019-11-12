@@ -6,4 +6,33 @@
     padding: 0;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
+}
+.boxContainer {
+    display: flex;
+    justify-content: center;
+    max-width: 1250px;
+    width: 100%;
+    flex-direction: row;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 30px;
+}
+
+.boxDrawBlock {
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+}
+
+@media (max-width: 1024px) {.boxContainer{
+    flex-direction: column;
+    align-items: center;}
+    .boxDrawBlock{
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+    .boxDrawBlock {
+        margin-right: 0px;
+    }
 }

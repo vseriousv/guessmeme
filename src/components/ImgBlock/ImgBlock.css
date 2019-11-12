@@ -1,10 +1,10 @@
 .imgBlock {
+    width: 250px;
     height: 450px;
     box-shadow: 0 0 2px black !important;
     display: flex;
     padding: 10px;
     box-sizing: border-box;
-    position: relative;
 }
 .bodyBoxImg {
     width: 100%;
@@ -17,4 +17,7 @@
     background-size: contain; 
     background-repeat: no-repeat;
     background-position: center;
+}
+.box_img:hover {
+  cursor: pointer;
 }

@@ -1,6 +1,7 @@
 .boxHeader {
   height: 50px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: rgb(32, 160, 240);
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -31,9 +32,27 @@
     margin: 5px 0 0 0;
     color: rgb(47, 91, 119);
 }
-.headerContent{
-    width: 100%;
-}
+
 .LogoutBTN{
-    cursor: pointer;
+    cursor: pointer
+}
+
+.bodyBoxAva {
+    display: flex;
+    align-items: center;
+}
+.bodyBoxAva p {
+    font-size: 14px;
+    color: black;
+    
+}
+.ImgAva {
+    display: flex;
+    margin: 0 5px 0 10px;
+    width: 30px;
+    height: 30px;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
 }

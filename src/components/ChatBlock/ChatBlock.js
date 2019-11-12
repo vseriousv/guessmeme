@@ -40,23 +40,28 @@ class ChatBlock extends Component {
                 <Box className="BoxExportText">
                     <Box>{this.state.chat_textarea}</Box>
                 </Box>
-                <Divider style={{width: "100%", marginBottom: "5px"}}/>
-                <form onSubmit={this.handleSubmit} style={{width: "100%", height: "20%", position: "relative"}}>
-                    <Box>
-                        <textarea
-                            id="chat_textarea"
-                            placeholder="Your text"
-                            className="chatInput"
-                            inputProps={{
-                            'aria-label': 'description',
-                            }}
-                            onChange={this.handleTextarea}
-                            >
+                
+                {/* <form onSubmit={this.handleSubmit}  style={{width: "100%", height: "20%", position: "relative"}}>
+                
+                        <Box className="boxSms">
+                            <textarea
+                                id="chat_textarea"
+                                placeholder="Your text"
+                                className="chatInput"
+                                inputProps={{
+                                'aria-label': 'description',
+                                }}
+                                onChange={this.handleTextarea}
+                                >
                                 {this.state.chat_textarea}
-                        </textarea>
-                    </Box>
-                    <input type="submit" value="Ок"/>
-                </form>
+                            </textarea>
+                            <div className="boxSendMessage">
+                                <button type="submit" class="sendMessage" aria-label="Отправить"></button>
+                            </div>
+                        </Box>
+                       
+                    
+                </form> */}
             </Paper>
           );
     }
