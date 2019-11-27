@@ -11,7 +11,7 @@ class DrawBlock extends Component {
 
     render(){
         if(this.state.userName === 'admin'){
-            return <DrawBox />;
+            return <DrawBox boxImg={this.props.boxImg} imageDrow={this.props.imageDrow}/>;
         }else{
             return <ImageBox />;           
         }

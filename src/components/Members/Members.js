@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import Box from '@material-ui/core/Box';
 // import './ImgBlock.css'; 
+ // eslint-disable-next-line
 import { subscribeToMembers } from '../SocketIO/SocketIO';
 
 
 class Members extends Component {
+     // eslint-disable-next-line
     constructor(props) {
         super(props);
         // subscribeToStateData((err, users) => console.log("users", typeof users));

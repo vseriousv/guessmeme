@@ -2,14 +2,15 @@ const io = require('socket.io')();
   
 const port = 8000;
 
-var stateData = {
+let stateData = {
     Xcoords: 0, 
     Ycoords: 0, 
     isClick: false, 
     isClear: false
 };
-var users = [];
-var conection = [];
+let image = 0
+let users = [];
+let conection = [];
 
 io.on('connection', (socket) => {
     conection.push(socket);
@@ -37,6 +38,11 @@ io.on('connection', (socket) => {
     socket.on('pushCoords', (data) => {
         console.log("data",data);
         stateData = data;
+    });
+
+    socket.on('pushImage', (image) => {
+        console.log("pushImage", image);
+        image = image;
     });
 
     socket.on('subscribeToStateData', () => {     

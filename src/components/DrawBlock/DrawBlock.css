@@ -4,7 +4,7 @@
     height: 450px;
     box-shadow: 0 0 2px black !important;
     margin-right: 30px;
-    cursor: url('/images/pencil.svg') 4 12, auto;
+    /* cursor: url('/images/pencil.svg') 4 12, auto; */
 }
 .imageInsert{
     width: 100%;

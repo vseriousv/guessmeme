@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Box from '@material-ui/core/Box';
-import { pushToCoords } from '../SocketIO/SocketIO';
+import { pushToCoords, pushImage } from '../SocketIO/SocketIO';
 
 import './DrawBlock.css'; 
 
@@ -11,6 +11,7 @@ class DrawBox extends Component {
     };
 
     componentDidMount() {
+        pushImage(this.props.imageDrow)
         var canv = document.getElementById("canvas");
         var ctx = canv.getContext('2d');
         var isDrawer = false;
@@ -25,7 +26,7 @@ class DrawBox extends Component {
         // code;
 
         if(this.state.userName === 'admin'){
-            console.log("DRAWER: ", this.state.userName )
+            // console.log("DRAWER: ", this.state.userName )
             isDrawer = true;
         }
 
@@ -79,7 +80,7 @@ class DrawBox extends Component {
 
         document.addEventListener('keydown', function(e){
             // console.log(e.keyCode);
-            if(e.keyCode == 67 && e.ctrlKey){ // press key 'C'
+            if(e.keyCode === 67 && e.ctrlKey){ // press key 'Ctrl+C'
                 clear();
                 pushToCoords({isClear: true});
                 console.log('Clear');
@@ -90,11 +91,13 @@ class DrawBox extends Component {
 
 
     style = {
-        backgroundImage: "url(/images/memKeyg.jpg)",
+        backgroundImage: "url(/images/"+this.props.boxImg[this.props.imageDrow].img+")",
         backgroundRepeate: "no-repeate"
     }
 
     render(){
+        // console.log("DrawBox: ", this.props.boxImg[this.props.imageDrow].img)
+        console.log(this.props.imageDrow);
         return (
             <Box className="imageInsert" style={this.style}>
                 <canvas id="canvas" style={{display: "block"}}>Your browser is not maintain canvas</canvas>

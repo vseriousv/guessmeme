@@ -15,8 +15,12 @@ function pushToCoords(coords) {
   socket.emit('pushCoords', coords);
 }
 
+function pushImage(image) {
+  socket.emit('pushImage', image);
+}
+
 function login(user) {
   socket.emit('login', user);
 }
 
-export { subscribeToStateData, pushToCoords, login, subscribeToMembers};
+export { subscribeToStateData, pushToCoords, pushImage, login, subscribeToMembers};

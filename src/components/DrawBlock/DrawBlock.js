@@ -8,7 +8,7 @@ class DrawBlock extends Component {
     render(){
         return (
             <Box className="DrawBlock">
-                <DrawCanvas />
+                <DrawCanvas boxImg={this.props.boxImg} imageDrow={this.props.imageDrow}/>
             </Box>
           );
     }
