@@ -1,9 +1,26 @@
 import openSocket from 'socket.io-client';
-const  socket = openSocket('http://localhost:8000');
+const socket = openSocket.connect('http://localhost:8000')
 
-function socketIO(cb) {
-  socket.on('timers', timestamp => cb(null, timestamp));
-  socket.emit('chat', 1000);
+function subscribeToStateData(callback) {
+  socket.on('stateData', data => callback(null, data));
+  socket.emit('subscribeToStateData');
 }
 
-export { socketIO };
+function subscribeToMembers(callback) {
+  socket.on('users', data => callback(null, data));
+  socket.emit('subscribeToMembers');
+}
+
+function pushToCoords(coords) {
+  socket.emit('pushCoords', coords);
+}
+
+function pushImage(image) {
+  socket.emit('pushImage', image);
+}
+
+function login(user) {
+  socket.emit('login', user);
+}
+
+export { subscribeToStateData, pushToCoords, pushImage, login, subscribeToMembers};

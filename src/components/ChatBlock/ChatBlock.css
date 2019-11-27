@@ -1,0 +1,85 @@
+.ChatBlock{
+    box-sizing: border-box;
+    height: 450px;
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 2px black !important;
+    box-sizing: border-box;
+}
+
+/* .boxSms {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+} */
+
+/* .chatInput{
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px 20px;
+    resize: none;
+    width: 85%;
+    box-sizing: border-box;
+    border: none;
+    font-family:'Montserrat', sans-serif;
+    color: black;
+    font-size: 0.875rem;
+    transition: 0.1s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+}
+.chatInput:hover {
+    border-bottom: 4px solid rgb(42, 94, 236);
+    transition: 0.1s ease-in-out;
+    box-sizing: border-box;
+}
+.chatInput:focus {
+    box-sizing: border-box;
+    border-bottom: 2px solid rgb(42, 94, 236);
+}
+
+.boxSendMessage {
+    display: flex;
+    width: 15%;
+    height: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+}
+.sendMessage {
+    display: flex;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 50px;
+    width: 30px;
+    cursor: pointer;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/images/arrow.svg);
+    background-color: none !important;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-color: white !important;
+    border-style: none !important;
+    outline: none;
+}     */
+.BoxExportText{
+    box-sizing: border-box;
+    width: 100%;
+    height: 75%;
+    box-shadow: inset 0px 0px 4px rgba(0,0,0,0.5);
+}
+@media (max-width: 1024px) {
+    .ChatBlock{
+        max-width: 730px;
+        width: 100%;
+        height: 250px; 
+    }
+}

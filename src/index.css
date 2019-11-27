@@ -2,7 +2,7 @@
   font-family: "Comfortaa";
   src: url("./static/Comfortaa-VariableFont_wght.ttf");
 }
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,700,700i&display=swap');
 
 body {
   margin: 0;
@@ -11,6 +11,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
   font-size: 16px;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
 }
 
 code {
